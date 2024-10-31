@@ -1,71 +1,70 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="accounting,bookkeeping,software,payroll,VAT,inventory,reporting,contacts">
+    <meta name="description" content="A rewrite of the 'resaliant' TailwindUI template without the Failwind.">
+    <meta name="keywords" content="tax,pricing,accounting,business,salary,deposit">
+        
+    <link as="font" rel="preload" href="template/fonts/poppins-western.woff2" crossorigin>
+    <link as="font" rel="preload" href="template/fonts/poppins-western-bold.woff2" crossorigin>
+    <link as="font" rel="preload" href="template/fonts/ResalientIcons-Regular.woff2" crossorigin>
+    <link as="style" rel="preload" href="template/resalient.fontIcons.screen.css">
+    
+    <link rel="stylesheet" href="template/resalient.fontIcons.screen.css" media="screen">
+    
+    <link rel="mask-icon" href="favicon.mask.svg" color="#08A">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
-	<meta charset="utf-8">
-	<meta
-		name="viewport"
-		content="width=device-width,initial-scale=1"
-	>
-	<meta
-		name="keywords"
-		content="accounting,bookkeeping,software,payroll,VAT,inventory,reporting,contacts"
-	>
-	<meta
-		name="description"
-		content="A rewrite of the 'resaliant' TailwindUI template without the Failwind."
-	>
-	<meta
-		name="keywords"
-		content="tax,pricing,accounting,business,salary,deposit"
-	>
-		
-	<link as="font" rel="preload" href="template/fonts/poppins-western.woff2" crossorigin>
-	<link as="font" rel="preload" href="template/fonts/poppins-western-bold.woff2" crossorigin>
-	<link as="font" rel="preload" href="template/fonts/ResalientIcons-Regular.woff2" crossorigin>
-	<link as="style" rel="preload" href="template/resalient.fontIcons.screen.css">
-	
-	<link rel="stylesheet" href="template/resalient.fontIcons.screen.css" media="screen">
-	
-	<link rel="mask-icon" href="favicon.mask.svg" color="#08A">
-	<link rel="shortcut icon" href="favicon.ico">
-	<link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <!-- Calculator Widget Script -->
+    <script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
 
-	<title>TaxPal</title>
+    <title>TaxPal</title>
+</head>
+<body>
+    <div id="top">
+        <header>
+            <h1><a href="/" class="icon_logo">Tax<span>Pal</span></a></h1>
+            <a href="#mainMenu" class="openMainMenu" hidden><span>Open Menu</span></a>
+            <nav id="mainMenu">
+                <a href="#" class="modalClose" hidden><span>Exit Menu</span></a>
+                <ul>
+                    <li hidden><a href="#" class="modalClose">Exit Menu</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li class="alternate featured"><a href="#getStarted">Get Started Today</a></li>
+                    <li class="alternate"><a href="#signIn">Sign in</a></li>
+                </ul>
+            </nav>
+        </header>
 
-</head><body>
-
-	<div id="top">
-
-		<header>
-			<h1><a href="/" class="icon_logo">Tax<span>Pal</span></a></h1>
-			<a href="#mainMenu" class="openMainMenu" hidden><span>Open Menu</span></a>
-			<nav id="mainMenu">
-				<a href="#" class="modalClose" hidden><span>Exit Menu</span></a>
-				<ul>
-					<li hidden><a href="#" class="modalClose">Exit Menu</a></li>
-					<li><a href="#features">Features</a></li>
-					<li><a href="#testimonials">Tesimonials</a></li>
-					<li><a href="#pricing">Pricing</a></li>
-					<li class="alternate featured"><a href="#getStarted">Get Started Today</a></li>
-					<li class="alternate"><a href="#signIn">Sign in</a></li>
-				</ul>
-			</nav>
-		</header>
-
-		<main>
-
-			<section class="banner">
-				<h2>
-					Accounting <span>made simple</span> for small businesses.
-				</h2>
-				<p>
-					This page is a rewrite of a paid template from "Tailwind UI" redone without the garbage frameworks, JavaScript for nothing, and general code bloat common to such trash.
-				</p>
-				<ul class="actions">
-					<li class="featured"><a href="#register">Get 6 months free</a></li>
-					<li><a href="https://salient.tailwindui.com/">Original Template</a></li>
-				</ul>
-			<!-- .banner --></section>
-
+        <main>
+            <section class="banner split-layout">
+                <!-- Left Column -->
+                <div class="content-column">
+                    <h2>
+                        Accounting <span>made simple</span> for small businesses.
+                    </h2>
+                    <p>
+                        Take control of your business finances with our intuitive accounting tools.
+                        Calculate your potential savings instantly.
+                    </p>
+                    <ul class="actions">
+                        <li class="featured"><a href="#register">Get 6 months free</a></li>
+                        <li><a href="#calculator" class="scroll-to-calc">Try Calculator</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Right Column - Calculator Widget -->
+                <div class="calculator-column">
+                    <div class="calculator-widget">
+                        <div class="commonninja_component pid-25b3a6aa-5982-4823-b34c-119492372f05"></div>
+                    </div>
+                </div>
+            <!-- .banner --></section>
 			<section id="companies">
 				<h2>Trusted by these six companies so far</h2>
 				<ul>

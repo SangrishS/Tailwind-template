@@ -905,3 +905,49 @@ main > div .action {
 		background:transparent;
 	}
 }
+
+
+/* Add these styles to your existing CSS file */
+
+.split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.content-column {
+    max-width: 540px;
+}
+
+.calculator-column {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 2rem;
+}
+
+.calculator-widget {
+    min-height: 400px;
+    width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .split-layout {
+        grid-template-columns: 1fr;
+        padding: 2rem 1rem;
+    }
+
+    .content-column {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .calculator-column {
+        margin-top: 2rem;
+    }
+}
