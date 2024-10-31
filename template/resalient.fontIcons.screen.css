@@ -1017,6 +1017,24 @@ main > div .action {
     margin: 10px 0;
 }
 
+.range-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    position: relative;
+    color: #6b7280;
+    font-size: 12px;
+}
+
+.range-labels span:first-child {
+    margin-left: -5px;  /* Adjust the left number position */
+}
+
+.range-labels span:last-child {
+    margin-right: -5px;  /* Adjust the right number position */
+}
+
+
 .range-input {
     width: 100%;
     appearance: none;
