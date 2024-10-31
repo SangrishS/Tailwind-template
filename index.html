@@ -68,22 +68,22 @@
 							<option>Risk Assessment</option>
 						</select>
 					</div>
-			
+				
 					<div class="form-group">
 						<label class="form-label">Average Analysis Time</label>
 						<div class="time-input">
-							<input type="number" value="10" min="0" max="40">
+							<input type="number" id="timeNumber" value="10" min="0" max="40">
 							<span>Hours</span>
 						</div>
 						<div class="range-container">
-							<input type="range" class="range-input" min="0" max="40" value="10">
+							<input type="range" id="timeRange" class="range-input" min="0" max="40" value="10">
 							<div class="range-labels">
 								<span>0</span>
 								<span>40</span>
 							</div>
 						</div>
 					</div>
-			
+				
 					<div class="form-group">
 						<label class="form-label">Factor Hidden Insights</label>
 						<div class="checkbox-group">
@@ -93,11 +93,19 @@
 							</label>
 							<label class="checkbox-label">
 								<input type="checkbox" class="checkbox-input" checked>
-								Red Flag Detection
+								Hidden Risk Identification
+							</label>
+							<label class="checkbox-label">
+								<input type="checkbox" class="checkbox-input" checked>
+								Cross Document Analysis
+							</label>
+							<label class="checkbox-label">
+								<input type="checkbox" class="checkbox-input" checked>
+								Data Consistency
 							</label>
 						</div>
 					</div>
-			
+				
 					<button class="submit-button">Discuss Pricing</button>
 				</div>
 			<!-- .banner --></section>
@@ -494,5 +502,19 @@
 			</footer>
 		</div>
 	<!-- #register.modal --></form>
+	<script>
+		const timeNumber = document.getElementById('timeNumber');
+		const timeRange = document.getElementById('timeRange');
+	
+		// Update number input when range changes
+		timeRange.addEventListener('input', function() {
+			timeNumber.value = this.value;
+		});
+	
+		// Update range when number input changes
+		timeNumber.addEventListener('input', function() {
+			timeRange.value = this.value;
+		});
+	</script>
 
 </body></html>
