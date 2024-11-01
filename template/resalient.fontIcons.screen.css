@@ -1170,3 +1170,101 @@ main > div .action {
         margin-top: 2rem;
     }
 }
+
+
+/* Update existing styles */
+.calculator-container {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.form-label {
+    color: #6B7280;  /* More muted color for labels */
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.form-select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #111827;
+    background: white;
+    cursor: pointer;
+}
+
+/* Results Container Styles */
+.results-container {
+    margin-top: 24px;
+    padding: 20px;
+    background: #F3F4F6;
+    border-radius: 8px;
+}
+
+.time-saved {
+    margin-bottom: 16px;
+}
+
+.seconds {
+    display: block;
+    color: #6B7280;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.hours-saved {
+    font-size: 24px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+}
+
+.learn-more-button {
+    width: 100%;
+    padding: 12px;
+    background: #2563EB;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.learn-more-button:hover {
+    background: #1D4ED8;
+}
+
+/* Update range input styles */
+.range-container {
+    margin: 16px 0;
+}
+
+.range-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    color: #6B7280;
+    font-size: 12px;
+}
+
+.time-input input {
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #111827;
+    width: 80px;
+}
+
+/* Checkbox updates */
+.checkbox-label {
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #374151;
+}
