@@ -38,10 +38,10 @@ class CalculatorEngine {
 
         // Feature configuration with base values and multipliers
         this.FEATURES = {
-            'Red Flag Detection': { baseValue: 3, multiplier: 0.15 },
-            'Hidden Risks Identification': { baseValue: 2, multiplier: 0.12 },
-            'Cross-Document Analysis': { baseValue: 5, multiplier: 0.18 },
-            'Data Consistency': { baseValue: 3, multiplier: 0.10 }
+            'Red Flag Detection': { baseValue: 3, multiplier: 1 },
+            'Hidden Risks Identification': { baseValue: 2, multiplier: 1 },
+            'Cross-Document Analysis': { baseValue: 5, multiplier: 1 },
+            'Data Consistency': { baseValue: 3, multiplier: 1 }
         };
 
         // Initialize after DOM is fully loaded
