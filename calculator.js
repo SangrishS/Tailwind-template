@@ -22,18 +22,18 @@ class CalculatorEngine {
 
         // Analysis conditions for each analysis time
         this.analysisConditions = {
-            time1: { mustBe: ['Fraud Detection'], mustNotBe: ['M&A Analysis'], baseMultiplier: 2.85 },
-            time2: { mustBe: ['M&A Analysis', 'Financial Health'], mustNotBe: ['Compliance Analysis'], baseMultiplier: 3.15 },
-            time3: { mustBe: ['Financial Health', 'Benchmarking'], mustNotBe: ['Fraud Detection'], baseMultiplier: 2.95 },
-            time4: { mustBe: ['Compliance Analysis', 'Corporate Vulnerabilities'], mustNotBe: ['M&A Analysis'], baseMultiplier: 2.75 },
-            time5: { mustBe: ['Benchmarking', 'Management & Governance'], mustNotBe: ['Financial Health'], baseMultiplier: 3.05 },
-            time6: { mustBe: ['Corporate Vulnerabilities', 'Legal & Litigation Review'], mustNotBe: ['Compliance Analysis'], baseMultiplier: 3.25 },
-            time7: { mustBe: ['Management & Governance', 'Regulatory Compliance Review'], mustNotBe: ['Benchmarking'], baseMultiplier: 2.65 },
-            time8: { mustBe: ['Legal & Litigation Review', 'Segment Reporting Analysis'], mustNotBe: ['Corporate Vulnerabilities'], baseMultiplier: 2.95 },
-            time9: { mustBe: ['Regulatory Compliance Review', 'Earnings Quality & Impact Analysis'], mustNotBe: ['Management & Governance'], baseMultiplier: 3.15 },
-            time10: { mustBe: ['Segment Reporting Analysis', 'Material Contract Review'], mustNotBe: ['Legal & Litigation Review'], baseMultiplier: 2.85 },
-            time11: { mustBe: ['Earnings Quality & Impact Analysis'], mustNotBe: ['Regulatory Compliance Review'], baseMultiplier: 3.35 },
-            time12: { mustBe: ['Material Contract Review'], mustNotBe: ['Segment Reporting Analysis'], baseMultiplier: 2.75 }
+            time1: { mustBe: ['Fraud Detection'], mustNotBe: ['M&A Analysis'], baseMultiplier: 1 },
+            time2: { mustBe: ['M&A Analysis', 'Financial Health'], mustNotBe: ['Compliance Analysis'], baseMultiplier: 1 },
+            time3: { mustBe: ['Financial Health', 'Benchmarking'], mustNotBe: ['Fraud Detection'], baseMultiplier: 1 },
+            time4: { mustBe: ['Compliance Analysis', 'Corporate Vulnerabilities'], mustNotBe: ['M&A Analysis'], baseMultiplier: 1 },
+            time5: { mustBe: ['Benchmarking', 'Management & Governance'], mustNotBe: ['Financial Health'], baseMultiplier: 1 },
+            time6: { mustBe: ['Corporate Vulnerabilities', 'Legal & Litigation Review'], mustNotBe: ['Compliance Analysis'], baseMultiplier: 1 },
+            time7: { mustBe: ['Management & Governance', 'Regulatory Compliance Review'], mustNotBe: ['Benchmarking'], baseMultiplier: 1 },
+            time8: { mustBe: ['Legal & Litigation Review', 'Segment Reporting Analysis'], mustNotBe: ['Corporate Vulnerabilities'], baseMultiplier: 1 },
+            time9: { mustBe: ['Regulatory Compliance Review', 'Earnings Quality & Impact Analysis'], mustNotBe: ['Management & Governance'], baseMultiplier: 1 },
+            time10: { mustBe: ['Segment Reporting Analysis', 'Material Contract Review'], mustNotBe: ['Legal & Litigation Review'], baseMultiplier: 1 },
+            time11: { mustBe: ['Earnings Quality & Impact Analysis'], mustNotBe: ['Regulatory Compliance Review'], baseMultiplier: 1 },
+            time12: { mustBe: ['Material Contract Review'], mustNotBe: ['Segment Reporting Analysis'], baseMultiplier: 1 }
         };
 
         // Feature configuration with base values and multipliers
