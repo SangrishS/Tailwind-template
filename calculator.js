@@ -1,32 +1,22 @@
 class CalculatorEngine {
     constructor() {
-        this.selectedType = 'Fraud Detection';
-        this.hours = 5;
-        this.enabledFeatures = new Set(['Red Flag Detection', 'Hidden Risks Identification', 'Cross-Document Analysis']);
+        this.defaultValues = {
+            "Fraud Detection": 16,
+            "M&A Analysis": 5,
+            "Financial Health": 4,
+            "Compliance Analysis": 8,
+            "Benchmarking": 3,
+            "Corporate Vulnerabilities": 6,
+            "Management & Governance": 5,
+            "Legal & Litigation Review": 7,
+            "Regulatory Compliance Review": 7,
+            "Segment Reporting Analysis": 7,
+            "Earnings Quality & Impact Analysis": 8,
+            "Material Contract Review": 5
+        };
         
-        // Analysis conditions for each analysis time
-        this.analysisConditions = {
-            time1: { mustBe: ['Fraud Detection'], mustNotBe: ['M&A Analysis'], baseMultiplier: 2.85 },
-            time2: { mustBe: ['M&A Analysis', 'Financial Health'], mustNotBe: ['Compliance Analysis'], baseMultiplier: 3.15 },
-            time3: { mustBe: ['Financial Health', 'Benchmarking'], mustNotBe: ['Fraud Detection'], baseMultiplier: 2.95 },
-            time4: { mustBe: ['Compliance Analysis', 'Corporate Vulnerabilities'], mustNotBe: ['M&A Analysis'], baseMultiplier: 2.75 },
-            time5: { mustBe: ['Benchmarking', 'Management & Governance'], mustNotBe: ['Financial Health'], baseMultiplier: 3.05 },
-            time6: { mustBe: ['Corporate Vulnerabilities', 'Legal & Litigation Review'], mustNotBe: ['Compliance Analysis'], baseMultiplier: 3.25 },
-            time7: { mustBe: ['Management & Governance', 'Regulatory Compliance Review'], mustNotBe: ['Benchmarking'], baseMultiplier: 2.65 },
-            time8: { mustBe: ['Legal & Litigation Review', 'Segment Reporting Analysis'], mustNotBe: ['Corporate Vulnerabilities'], baseMultiplier: 2.95 },
-            time9: { mustBe: ['Regulatory Compliance Review', 'Earnings Quality & Impact Analysis'], mustNotBe: ['Management & Governance'], baseMultiplier: 3.15 },
-            time10: { mustBe: ['Segment Reporting Analysis', 'Material Contract Review'], mustNotBe: ['Legal & Litigation Review'], baseMultiplier: 2.85 },
-            time11: { mustBe: ['Earnings Quality & Impact Analysis'], mustNotBe: ['Regulatory Compliance Review'], baseMultiplier: 3.35 },
-            time12: { mustBe: ['Material Contract Review'], mustNotBe: ['Segment Reporting Analysis'], baseMultiplier: 2.75 }
-        };
-
-        // Feature configuration with base values and multipliers
-        this.FEATURES = {
-            'Red Flag Detection': { baseValue: 3, multiplier: 0.15 },
-            'Hidden Risks Identification': { baseValue: 2, multiplier: 0.12 },
-            'Cross-Document Analysis': { baseValue: 5, multiplier: 0.18 },
-            'Data Consistency': { baseValue: 3, multiplier: 0.10 }
-        };
+        this.selectedType = 'Fraud Detection'; // Default selection
+        this.hours = this.defaultValues[this.selectedType]; // Set initial hours based on default value
 
         // Initialize after DOM is fully loaded
         if (document.readyState === 'loading') {
@@ -41,7 +31,6 @@ class CalculatorEngine {
             this.timeNumber = document.getElementById('timeNumber');
             this.timeRange = document.getElementById('timeRange');
             this.analysisTypeSelect = document.querySelector('.form-select');
-            this.checkboxes = document.querySelectorAll('.checkbox-input');
             this.hoursResultElement = document.querySelector('.hours-saved');
             this.secondsResultElement = document.querySelector('.seconds');
             
@@ -63,7 +52,7 @@ class CalculatorEngine {
             try {
                 const value = this.validateTimeValue(e.target.value);
                 this.timeNumber.value = value;
-                this.hours = value;
+                this.hours = value; // Update hours based on slider
                 debouncedCalculate();
             } catch (error) {
                 console.error('Range input error:', error);
@@ -74,7 +63,7 @@ class CalculatorEngine {
             try {
                 const value = this.validateTimeValue(e.target.value);
                 this.timeRange.value = value;
-                this.hours = value;
+                this.hours = value; // Update hours based on input
                 debouncedCalculate();
             } catch (error) {
                 console.error('Number input error:', error);
@@ -84,83 +73,28 @@ class CalculatorEngine {
         this.analysisTypeSelect.addEventListener('change', (e) => {
             try {
                 this.selectedType = e.target.value;
+                this.hours = this.defaultValues[this.selectedType]; // Reset to default value for new selection
+                this.timeNumber.value = this.hours; // Update the number input
+                this.timeRange.value = this.hours; // Update the range input
                 this.calculate();
             } catch (error) {
                 console.error('Analysis type selection error:', error);
             }
         });
-
-        this.checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', (e) => {
-                try {
-                    const label = e.target.closest('.checkbox-label');
-                    const featureName = label.textContent.trim();
-                    if (e.target.checked) {
-                        this.enabledFeatures.add(featureName);
-                    } else {
-                        this.enabledFeatures.delete(featureName);
-                    }
-                    this.calculate();
-                } catch (error) {
-                    console.error('Checkbox handling error:', error);
-                }
-            });
-        });
-    }
-
-    checkConditions(timeKey) {
-        const conditions = this.analysisConditions[timeKey];
-        const mustBeCondition = conditions.mustBe.includes(this.selectedType);
-        const mustNotBeCondition = !conditions.mustNotBe.includes(this.selectedType);
-        
-        return {
-            conditionsMet: mustBeCondition && mustNotBeCondition,
-            multiplier: conditions.baseMultiplier
-        };
-    }
-
-    calculateFeatureValues() {
-        let baseSum = 0;
-        let multiplierSum = 0;
-        
-        for (const feature of this.enabledFeatures) {
-            if (this.FEATURES[feature]) {
-                baseSum += this.FEATURES[feature].baseValue;
-                multiplierSum += this.FEATURES[feature].multiplier;
-            }
-        }
-        
-        return { baseSum, multiplierSum };
     }
 
     calculate() {
         try {
-            const { baseSum, multiplierSum } = this.calculateFeatureValues();
-            let timeBasedTotal = 0;
-            
-            Object.keys(this.analysisConditions).forEach(timeKey => {
-                const result = this.checkConditions(timeKey);
-                if (result.conditionsMet) {
-                    timeBasedTotal += this.hours * result.multiplier * (1 + multiplierSum);
-                }
-            });
-
-            const totalHours = timeBasedTotal + baseSum;
-            const timeAdjustment = 15 / 3600;
-            const adjustedTotal = Math.max(0, totalHours - timeAdjustment);
-
-            const totalSeconds = adjustedTotal * 3600;
-            const wholeHours = Math.floor(adjustedTotal);
-            const remainingSeconds = totalSeconds - (wholeHours * 3600);
-
-            this.updateDisplay(adjustedTotal, remainingSeconds);
+            // Calculate adjusted hours based on the selected type
+            const adjustedHours = this.hours - (this.defaultValues[this.selectedType] * 0.004); // Example adjustment
+            this.updateDisplay(adjustedHours);
         } catch (error) {
             console.error('Calculation error:', error);
-            this.updateDisplay(0, 0);
+            this.updateDisplay(0);
         }
     }
 
-    updateDisplay(hours, seconds) {
+    updateDisplay(hours) {
         try {
             const formattedHours = hours.toLocaleString('en-US', {
                 minimumFractionDigits: 3,
@@ -170,9 +104,7 @@ class CalculatorEngine {
             if (this.hoursResultElement) {
                 this.hoursResultElement.textContent = `${formattedHours} Hours Saved`;
             }
-            if (this.secondsResultElement) {
-                this.secondsResultElement.textContent = `${seconds.toFixed(3)} seconds`;
-            }
+            // Additional display logic can be added here if needed
         } catch (error) {
             console.error('Display update error:', error);
         }
@@ -182,7 +114,7 @@ class CalculatorEngine {
         let numValue = parseFloat(value);
         if (isNaN(numValue)) numValue = 0;
         if (numValue < 0) numValue = 0;
-        if (numValue > 40) numValue = 40;
+        if (numValue > 40) numValue = 40; // Assuming max hours is 40
         return numValue;
     }
 }
