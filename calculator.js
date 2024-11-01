@@ -6,87 +6,26 @@ class CalculatorEngine {
         
         // Analysis conditions for each analysis time
         this.analysisConditions = {
-            // First Analysis Time conditions
-            time1: {
-                mustBe: ['Fraud Detection'],
-                mustNotBe: ['M&A Analysis'],
-                baseMultiplier: 2.85
-            },
-            time2: {
-                mustBe: ['M&A Analysis', 'Financial Health'],
-                mustNotBe: ['Compliance Analysis'],
-                baseMultiplier: 3.15
-            },
-            time3: {
-                mustBe: ['Financial Health', 'Benchmarking'],
-                mustNotBe: ['Fraud Detection'],
-                baseMultiplier: 2.95
-            },
-            time4: {
-                mustBe: ['Compliance Analysis', 'Corporate Vulnerabilities'],
-                mustNotBe: ['M&A Analysis'],
-                baseMultiplier: 2.75
-            },
-            time5: {
-                mustBe: ['Benchmarking', 'Management & Governance'],
-                mustNotBe: ['Financial Health'],
-                baseMultiplier: 3.05
-            },
-            time6: {
-                mustBe: ['Corporate Vulnerabilities', 'Legal & Litigation Review'],
-                mustNotBe: ['Compliance Analysis'],
-                baseMultiplier: 3.25
-            },
-            time7: {
-                mustBe: ['Management & Governance', 'Regulatory Compliance Review'],
-                mustNotBe: ['Benchmarking'],
-                baseMultiplier: 2.65
-            },
-            time8: {
-                mustBe: ['Legal & Litigation Review', 'Segment Reporting Analysis'],
-                mustNotBe: ['Corporate Vulnerabilities'],
-                baseMultiplier: 2.95
-            },
-            time9: {
-                mustBe: ['Regulatory Compliance Review', 'Earnings Quality & Impact Analysis'],
-                mustNotBe: ['Management & Governance'],
-                baseMultiplier: 3.15
-            },
-            time10: {
-                mustBe: ['Segment Reporting Analysis', 'Material Contract Review'],
-                mustNotBe: ['Legal & Litigation Review'],
-                baseMultiplier: 2.85
-            },
-            time11: {
-                mustBe: ['Earnings Quality & Impact Analysis'],
-                mustNotBe: ['Regulatory Compliance Review'],
-                baseMultiplier: 3.35
-            },
-            time12: {
-                mustBe: ['Material Contract Review'],
-                mustNotBe: ['Segment Reporting Analysis'],
-                baseMultiplier: 2.75
-            }
+            time1: { mustBe: ['Fraud Detection'], mustNotBe: ['M&A Analysis'], baseMultiplier: 2.85 },
+            time2: { mustBe: ['M&A Analysis', 'Financial Health'], mustNotBe: ['Compliance Analysis'], baseMultiplier: 3.15 },
+            time3: { mustBe: ['Financial Health', 'Benchmarking'], mustNotBe: ['Fraud Detection'], baseMultiplier: 2.95 },
+            time4: { mustBe: ['Compliance Analysis', 'Corporate Vulnerabilities'], mustNotBe: ['M&A Analysis'], baseMultiplier: 2.75 },
+            time5: { mustBe: ['Benchmarking', 'Management & Governance'], mustNotBe: ['Financial Health'], baseMultiplier: 3.05 },
+            time6: { mustBe: ['Corporate Vulnerabilities', 'Legal & Litigation Review'], mustNotBe: ['Compliance Analysis'], baseMultiplier: 3.25 },
+            time7: { mustBe: ['Management & Governance', 'Regulatory Compliance Review'], mustNotBe: ['Benchmarking'], baseMultiplier: 2.65 },
+            time8: { mustBe: ['Legal & Litigation Review', 'Segment Reporting Analysis'], mustNotBe: ['Corporate Vulnerabilities'], baseMultiplier: 2.95 },
+            time9: { mustBe: ['Regulatory Compliance Review', 'Earnings Quality & Impact Analysis'], mustNotBe: ['Management & Governance'], baseMultiplier: 3.15 },
+            time10: { mustBe: ['Segment Reporting Analysis', 'Material Contract Review'], mustNotBe: ['Legal & Litigation Review'], baseMultiplier: 2.85 },
+            time11: { mustBe: ['Earnings Quality & Impact Analysis'], mustNotBe: ['Regulatory Compliance Review'], baseMultiplier: 3.35 },
+            time12: { mustBe: ['Material Contract Review'], mustNotBe: ['Segment Reporting Analysis'], baseMultiplier: 2.75 }
         };
 
         // Feature configuration with base values and multipliers
         this.FEATURES = {
-            'Red Flag Detection': {
-                baseValue: 3,
-                multiplier: 0.15
-            },
-            'Hidden Risks Identification': {
-                baseValue: 2,
-                multiplier: 0.12
-            },
-            'Cross-Document Analysis': {
-                baseValue: 5,
-                multiplier: 0.18
-            },
-            'Data Consistency': {
-                baseValue: 3,
-                multiplier: 0.10
-            }
+            'Red Flag Detection': { baseValue: 3, multiplier: 0.15 },
+            'Hidden Risks Identification': { baseValue: 2, multiplier: 0.12 },
+            'Cross-Document Analysis': { baseValue: 5, multiplier: 0.18 },
+            'Data Consistency': { baseValue: 3, multiplier: 0.10 }
         };
 
         // Initialize after DOM is fully loaded
@@ -114,7 +53,6 @@ class CalculatorEngine {
     }
 
     setupEventListeners() {
-        // Debounce function for performance
         let calculateTimeout;
         const debouncedCalculate = () => {
             clearTimeout(calculateTimeout);
@@ -170,11 +108,9 @@ class CalculatorEngine {
         });
     }
 
-    // Check conditions for specific time calculation
     checkConditions(timeKey) {
         const conditions = this.analysisConditions[timeKey];
-        
-        const mustBeCondition = conditions.mustBe.some(type => type === this.selectedType);
+        const mustBeCondition = conditions.mustBe.includes(this.selectedType);
         const mustNotBeCondition = !conditions.mustNotBe.includes(this.selectedType);
         
         return {
@@ -199,13 +135,9 @@ class CalculatorEngine {
 
     calculate() {
         try {
-            // Get feature calculations
             const { baseSum, multiplierSum } = this.calculateFeatureValues();
-            
-            // Calculate time-based portion
             let timeBasedTotal = 0;
             
-            // Calculate for each time condition
             Object.keys(this.analysisConditions).forEach(timeKey => {
                 const result = this.checkConditions(timeKey);
                 if (result.conditionsMet) {
@@ -213,17 +145,13 @@ class CalculatorEngine {
                 }
             });
 
-            // Add base feature values
             const totalHours = timeBasedTotal + baseSum;
-            
-            // Time adjustment (15 seconds converted to hours)
             const timeAdjustment = 15 / 3600;
             const adjustedTotal = Math.max(0, totalHours - timeAdjustment);
 
-            // Calculate seconds
             const totalSeconds = adjustedTotal * 3600;
             const wholeHours = Math.floor(adjustedTotal);
-            const remainingSeconds = (totalSeconds - (wholeHours * 3600));
+            const remainingSeconds = totalSeconds - (wholeHours * 3600);
 
             this.updateDisplay(adjustedTotal, remainingSeconds);
         } catch (error) {
