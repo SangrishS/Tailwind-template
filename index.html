@@ -1,310 +1,462 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="keywords" content="accounting,bookkeeping,software,payroll,VAT,inventory,reporting,contacts">
-    <meta name="description" content="A rewrite of the 'resaliant' TailwindUI template without the Failwind.">
-    <meta name="keywords" content="tax,pricing,accounting,business,salary,deposit">
-        
-    <link as="font" rel="preload" href="template/fonts/poppins-western.woff2" crossorigin>
-    <link as="font" rel="preload" href="template/fonts/poppins-western-bold.woff2" crossorigin>
-    <link as="font" rel="preload" href="template/fonts/ResalientIcons-Regular.woff2" crossorigin>
-    <link as="style" rel="preload" href="template/resalient.fontIcons.screen.css">
-    
-    <link rel="stylesheet" href="template/resalient.fontIcons.screen.css" media="screen">
-    
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<!DOCTYPE html><html lang="en"><head>
 
-    <!-- Calculator Widget Script -->
-    <script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
-    <style>
-        .banner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 2rem;
-            padding: 2rem;
-        }
-        
-        .content-side {
-            flex: 1;
-        }
-        
-        .calculator-container {
-            flex: 1;
-            min-width: 300px;
-        }
-    </style>
-
-    <title>SmartFilings</title>
-</head>
-<body>
-    <div id="top">
-        <header>
-			<div class="header-container">
-				<h1>
-					<a href="/">
-						<img src="logo.png" alt="SmartFilings Logo">
-					</a>
-				</h1>
-				
-				<nav class="main-nav">
-					<ul>
-						<li><a href="#features">Features</a></li>
-						<li><a href="#testimonials">Testimonials</a></li>
-						<li><a href="#pricing">Pricing</a></li>
-					</ul>
-				</nav>
+	<meta charset="utf-8">
+	<meta
+		name="viewport"
+		content="width=device-width,initial-scale=1"
+	>
+	<meta
+		name="keywords"
+		content="accounting,bookkeeping,software,payroll,VAT,inventory,reporting,contacts"
+	>
+	<meta
+		name="description"
+		content="A rewrite of the 'resaliant' TailwindUI template without the Failwind."
+	>
+	<meta
+		name="keywords"
+		content="tax,pricing,accounting,business,salary,deposit"
+	>
 		
-				<div class="auth-buttons">
-					<a href="#signin" class="sign-in">Sign in</a>
-					<a href="https://tally.so/r/nPAxEb" target="_blank" rel="noopener noreferrer" class="get-started">
-						Join Waitlist
-					</a>
-				</div>
-			</div>
+	<link as="font" rel="preload" href="template/fonts/poppins-western.woff2" crossorigin>
+	<link as="font" rel="preload" href="template/fonts/poppins-western-bold.woff2" crossorigin>
+	<link as="font" rel="preload" href="template/fonts/ResalientIcons-Regular.woff2" crossorigin>
+	<link as="style" rel="preload" href="template/resalient.fontIcons.screen.css">
+	
+	<link rel="stylesheet" href="template/resalient.fontIcons.screen.css" media="screen">
+	
+	<link rel="mask-icon" href="favicon.mask.svg" color="#08A">
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+	<title>TaxPal</title>
+
+</head><body>
+
+	<div id="top">
+
+		<header>
+			<h1><a href="/" class="icon_logo">Tax<span>Pal</span></a></h1>
+			<a href="#mainMenu" class="openMainMenu" hidden><span>Open Menu</span></a>
+			<nav id="mainMenu">
+				<a href="#" class="modalClose" hidden><span>Exit Menu</span></a>
+				<ul>
+					<li hidden><a href="#" class="modalClose">Exit Menu</a></li>
+					<li><a href="#features">Features</a></li>
+					<li><a href="#testimonials">Tesimonials</a></li>
+					<li><a href="#pricing">Pricing</a></li>
+					<li class="alternate featured"><a href="#getStarted">Get Started Today</a></li>
+					<li class="alternate"><a href="#signIn">Sign in</a></li>
+				</ul>
+			</nav>
 		</header>
-		
-		<style>
-			header {
-				padding: 1.5rem 2rem;
-				background: #f8fafc;
-				border-bottom: 1px solid #e5e7eb;
-			}
-			
-			.header-container {
-				max-width: 1280px;
-				margin: 0 auto;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-			}
-			
-			header h1 {
-				margin: 0;
-				flex-shrink: 0;
-			}
-			
-			header h1 img {
-				height: 70px; /* Reduced from 32px */
-				width: auto;
-				display: block;
-			}
-			
-			.main-nav {
-				margin-left: 4rem; /* Increased from 3rem */
-			}
-			
-			.main-nav ul {
-				display: flex;
-				gap: 3rem; /* Increased from 2.5rem */
-				list-style: none;
-				margin: 0;
-				padding: 0;
-			}
-			
-			.main-nav a {
-				text-decoration: none;
-				color: #6b7280;
-				font-size: 0.875rem;
-				font-weight: 500;
-				padding: 0.5rem 0;
-				transition: color 0.2s ease;
-			}
-			
-			.main-nav a:hover {
-				color: #111827;
-			}
-			
-			.auth-buttons {
-				display: flex;
-				gap: 3rem; /* Increased from 2rem */
-				align-items: center;
-				margin-left: auto;
-			}
-			
-			.auth-buttons .sign-in {
-				color: #6b7280;
-				padding: 1.25rem 1.25rem;
-				text-decoration: none;
-				font-size: 0.875rem;
-				font-weight: 500;
-				transition: color 0.2s ease;
-			}
-			
-			.auth-buttons .get-started {
-				background: #4066FF;
-				color: white !important;
-				padding: 0.625rem 1.25rem; /* Slightly increased padding */
-				border-radius: 9999px;
-				text-decoration: none;
-				font-size: 0.875rem;
-				font-weight: 500;
-				transition: background-color 0.2s ease;
-			}
-			
-			/* Rest of the mobile styles remain the same */
-			@media (max-width: 768px) {
-				.header-container {
-					flex-direction: column;
-					gap: 1.5rem;
-					padding: 1rem 0;
-				}
-				
-				.main-nav {
-					margin-left: 0;
-					width: 100%;
-				}
-				
-				.main-nav ul {
-					flex-direction: column;
-					text-align: center;
-					gap: 1rem;
-				}
-				
-				.auth-buttons {
-					flex-direction: column;
-					width: 100%;
-					gap: 1rem;
-					margin-left: 1;
-				}
-				
-				.auth-buttons a {
-					width: 100%;
-					text-align: center;
-				}
-			}
-			</style>
 
-        <main>
-            <section class="banner">
-                <!-- Left Column -->
-                <div class="content-side">
-                    <h2>
-                        Transform <span style="color: #2563eb">20 hours</span> of work into <span style="color: #2563eb">1 Minute</span>.
-                    </h2>
-                    <p>
-                        Experience a new era of analysis as our AI makes reviewing corporate disclosures instantaneous for finance professionals everywhere.
-                    </p>
-                    <ul class="actions">
-						<li class="featured">
-							<a href="https://tally.so/r/w8dXkP" target="_blank" rel="noopener noreferrer">
-								Request Beta Access
-							</a>
-						</li>
-						<li>
-							<a href="https://tally.so/r/nPAxEb" target="_blank" rel="noopener noreferrer">
-								Join Waitlist
-							</a>
-						</li>
-					</ul>
-                </div>
-        
-                <!-- Right Column - Calculator -->
-                <div class="calculator-container">
-                    <!-- Embed Elfsight Calculator -->
-                    <script src="https://static.elfsight.com/platform/platform.js" async></script>
-                    <div class="elfsight-app-dd5c8d74-6a52-4820-b965-619e11277d02" data-elfsight-app-lazy></div>
-                </div>
-            </section>
+		<main>
 
-			<section class="video-section">
-				<div class="video-container">
-					<div class="content">
-						<p>Gain an edge with AI that surfaces hidden insights instantly, helping you stay ahead in a fast-moving financial landscape.</p>
+			<section class="banner">
+				<h2>
+					Accounting <span>made simple</span> for small businesses.
+				</h2>
+				<p>
+					This page is a rewrite of a paid template from "Tailwind UI" redone without the garbage frameworks, JavaScript for nothing, and general code bloat common to such trash.
+				</p>
+				<ul class="actions">
+					<li class="featured"><a href="#register">Get 6 months free</a></li>
+					<li><a href="https://salient.tailwindui.com/">Original Template</a></li>
+				</ul>
+			<!-- .banner --></section>
+
+			<section id="companies">
+				<h2>Trusted by these six companies so far</h2>
+				<ul>
+					<li class="icon_transistor">Transistor</li>
+					<li class="icon_tuple">Tuple</li>
+					<li class="icon_staticKit">StaticKit</li>
+					<li class="icon_mirage">Mirage</li>
+					<li class="icon_laravel">Laravel</li>
+					<li class="icon_statamic">Statamic</li>
+				</ul>
+			<!-- #companies --></section>
+
+			<div>
+				<section id="features">
+
+					<header>
+						<h2>Everything you need to run your books.</h2>
+						<p>
+							Well everything you need if you aren’t that picky about minor details like tax compliance.
+						</p>
+					</header>
+
+					<input hidden id="radio_1_Payroll" name="imgRadioFeatures" type="radio" checked>
+					<input hidden id="radio_1_Expenses" name="imgRadioFeatures" type="radio">
+					<input hidden id="radio_1_Vat" name="imgRadioFeatures" type="radio">
+					<input hidden id="radio_1_Reporting" name="imgRadioFeatures" type="radio">
+
+					<div>
+						<article>
+							<h3>Payroll</h3>
+							<p>
+								Keep track of everyone's salaries and whether or not they've been paid. Direct deposit not supported.
+							</p>
+							<label for="radio_1_Payroll"></label>
+						</article><article>
+							<h3>Claim Expenses</h3>
+							<p>
+								All of your receipts organized into one place, as long as you don't mind typing in the data by hand.
+							</p>
+							<label for="radio_1_Expenses"></label>
+						</article><article>
+							<h3>VAT Handling</h3>
+							<p>
+								We only sell our software to companies who don't deal with VAT at all, so technically we do all the VAT stuff they need.
+							</p>
+							<label for="radio_1_Vat">View VAT</label>
+						</article><article>
+							<h3>Reporting</h3>
+							<p>
+								Easily export your data into an Excel spreadsheet where you can do whatever the hell you want with it.
+							</p>
+							<label for="radio_1_Reporting"></label>
+						</article>
 					</div>
-					<div class="video-wrapper">
-						<video autoplay loop muted playsinline class="demo-video" style="background-color: white;">
-							<source src="video_sf.mp4" type="video/mp4">
-						</video>
-						
-					</div>
+
+					<aside>
+						<img loading="lazy" src="images/features/payroll.webp" alt="Payroll">
+						<img loading="lazy" src="images/features/claims.webp" alt="Claim Expenses">
+						<img loading="lazy" src="images/features/vat.webp" alt="VAT Handling">
+						<img loading="lazy" src="images/features/reporting.webp" alt="Reporting">
+					</aside>
+
+				<!-- #features --></section>
+			</div>
+
+			<section id="everydayTasks">
+
+				<header>
+					<h2>Simplify everyday business tasks.</h2>
+					<p>
+						This section is utter shite since for a lot of users the images are pushed off the bottom of the page so you have no idea what the "buttons" even do.
+					</p>
+				</header>
+
+				<input hidden id="radio_2_Reporting" name="imgRadioTasks" type="radio" checked>
+				<input hidden id="radio_2_Inventory" name="imgRadioTasks" type="radio">
+				<input hidden id="radio_2_Contacts" name="imgRadioTasks" type="radio">
+
+				<div>
+					<article>
+						<heading>
+							<h3 class="icon_reporting">Reporting</h3>
+							<p>
+								Stay on top of things with always up-to-date reporting features.
+							</p>
+						</heading>
+						<p>
+							We talked about reporting in the section above but we needed three items here, so mentioning it one more time for posterity.
+						</p>
+						<label for="radio_2_Reporting"></label>
+					</article><article>
+						<heading>
+							<h3 class="icon_inventory">Inventory</h3>
+							<p>
+								Never lose track of what’s in stock with accurate inventory tracking.
+							</p>
+						</heading>
+						<p>
+							We don’t offer this as part of our software but that statement is inarguably true. Accurate inventory tracking would help you for sure.
+						</p>
+						<label for="radio_2_Inventory"></label>
+					</article><article>
+						<heading>
+							<h3 class="icon_contacts">Contacts</h3>
+							<p>
+								Organize all of your contacts, service providers, and invoices in one place.
+							</p>
+						</heading>
+						<p>
+							This also isn’t actually a feature, it’s just some friendly advice. We definitely recommend that you do this, you’ll feel really organized and professional.
+						</p>
+						<label for="radio_2_Contacts"></label>
+					</article>
 				</div>
-			</section>
-			
-			<style>
-			.video-section {
-				padding: 4rem 0;
-				background: #E4E3E3;
-				margin-top: 4rem;
-			}
-			
-			.video-container {
-				max-width: 1200px;
-				margin: 0 auto;
-				padding: 0 2rem;
-				display: flex;
-				align-items: center;
-				gap: 4rem;
-			}
-			
-			.content {
-				flex: 1;
-			}
-			
-			.content h2 {
-				font-size: 2.5rem;
-				margin-bottom: 1rem;
-			}
-			
-			.content p {
-				font-size: 1.25rem;
-				color: #64748b;
-			}
-			
-			.video-wrapper {
-				flex: 1.5;
-			}
-			
-			.demo-video {
-				width: 100%;
-				border-radius: 8px;
-				box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-			}
-			
-			@media (max-width: 768px) {
-				.video-container {
-					flex-direction: column;
-					gap: 2rem;
-				}
-			}
-			</style>
-        </main>
 
-        <footer>
-            <a href="/" style="display: block; text-align: center;">
-				<img src="logo.png" alt="SmartFilings Logo" class="footer-logo">
-			</a>
-            <ul class="onPageLinks">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#testimonials">Tesimonials</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-            </ul>
-			<style>
-				.footer-logo {
-					height: 90px; /* Tripled from original 30px */
-					width: auto;
-					display: inline-block;
-					margin: 0 auto;
-				}
-				</style>
-            <p>
-                &copy; 2024 SmartFilings. All rights reserved.
-            </p>
-            <ul class="socialLinks">
-                <li>
-                    <a href="#" class="icon_twitter">
-                        <span>Twitter</span>
-                    </a>
-                </li><li>
-                    <a href="#" class="icon_github">
-                        <span>Github</span>
-                    </a>
-                </li>
-            </ul>
-        </footer>
-    </div>
-</body>
-</html>
+				<aside>
+					<img loading="lazy" src="images/tasks/reporting.webp" alt="reporting">
+					<img loading="lazy" src="images/tasks/inventory.webp" alt="inventory">
+					<img loading="lazy" src="images/tasks/contacts.webp" alt="contacts">
+				</aside>
+
+			<!-- #everydayTasks --></section>
+
+			<div>
+				<section id="getStarted" class="headerless">
+					<h2>Get started today</h2>
+					<p>
+						It’s time to take control of your books. Buy our software so you can feel like you’re doing something productive.
+					</p>
+					<ul class="actions">
+						<li><a href="#register">Get 6 months free</a></li>
+					</ul>
+				<!-- #getStarted --></section>
+			</div>
+
+			<section id="testimonials">
+
+				<header>
+					<h2>Loved by businesses worldwide.</h2>
+					<p>
+						Our software is so simple that people can’t help but fall in love with it. Simplicity is easy when you just skip tons of mission-critical features.
+					</p>
+				</header>
+
+				<blockquote>
+					<p>
+						TaxPal is so easy to use I can’t help but wonder if it’s really doing the things the government expects me to do.
+					</p>
+					<footer>
+						<img loading="lazy" src="images/testimonials/sherylBerge.webp" alt="Sheryl Berge">
+						Sheryl Berge<br>
+						<span>CEO at Lynch LLC</span>
+					</footer>
+				</blockquote><blockquote>
+					<p>
+						I’m trying to get a hold of someone in support, I’m in a lot of trouble right now and they are saying it has something to do with my books. Please get back to me right away.
+					</p>
+					<footer>
+						<img loading="lazy" src="images/testimonials/amyHahn.webp" alt="Amy Hahn">
+						Amy Hahn<br>
+						<span>Director at Velocity Industries</span>
+					</footer>
+				</blockquote><blockquote>
+					<p>
+						The best part about TaxPal is every time I pay my employees, my bank balance doesn’t go down like it used to. Looking forward to spending this extra cash when I figure out why my card is being declined.
+					</p>
+					<footer>
+						<img loading="lazy" src="images/testimonials/lelandKiehn.webp" alt="Leland Kiehn">
+						Leland Kiehn<br>
+						<span>Founder of Kiehn and Sons</span>
+					</footer>
+				</blockquote><blockquote>
+					<p>
+						There are so many things I had to do with my old software that I just don’t do at all with TaxPal. Suspicious but I can’t say I don’t love it.
+					</p>
+					<footer>
+						<img loading="lazy" src="images/testimonials/erinPowlowski.webp" alt="Erin Powlowski">
+						Erin Powlowski<br>
+						<span>COO at Armstrong Inc</span>
+					</footer>
+				</blockquote><blockquote>
+					<p>
+						I used to have to remit tax to the EU and with TaxPal I somehow don’t have to do that anymore. Nervous to travel there now though.
+					</p>
+					<footer>
+						<img loading="lazy" src="images/testimonials/peterRenolds.webp" alt="Peter Renolds"><br>
+						Peter Renolds<br>
+						<span>Founder of West Inc</span>
+					</footer>
+				</blockquote><blockquote>
+					<p>
+						This is the fourth email I’ve sent to your support team. I am literally being held in jail for tax fraud. Please answer your damn emails, this is important.
+					</p>
+					<footer>
+						<img loading="lazy" src="images/testimonials/amyHahn.webp" alt="Amy Hahn"><br>
+						Amy Hahn<br>
+						<span>Director at Velocity Industries</span>
+					</footer>
+				</blockquote>
+
+			<!-- #testimonials --></section>
+
+			<div>
+				<section id="pricing">
+
+					<header>
+						<h2><span>Simple pricing,</span> for everyone.</h2>
+						<p>
+							It doesn’t matter what size your business is, our software won’t work well for you.
+						</p>
+					</header>
+
+					<article>
+						<h3><span>$9</span> Starter</h3>
+						<p>
+							Good for anyone who is self-employed and just getting started.
+						</p>
+						<a href="#register" class="action">Get Started</a>
+						<ul>
+							<li>Send 10 quotes and invoices</li>
+							<li>Connect up to 2 bank accounts</li>
+							<li>Track up to 15 expenses per month</li>
+							<li>Manual payroll support</li>
+							<li>Export up to 3 reports</li>
+						</ul>
+					</article>
+
+					<article class="featured">
+						<h3><span>$15</span> Small Business</h3>
+						<p>
+							Perfect for small / medium sized businesses.
+						</p>
+						<a href="#register" class="action">Get Started</a>
+						<ul>
+							<li>Send 25 quotes and invoices</li>
+							<li>Connect up to 5 bank accounts</li>
+							<li>Track up to 50 expenses per month</li>
+							<li>Automated payroll support</li>
+							<li>Export up to 12 reports</li>
+							<li>Bulk reconcile transactions</li>
+							<li>Track in multiple currencies</li>
+						</ul>
+					</article>
+
+					<article>
+						<h3><span>$39</span> Enterprise</h3>
+						<p>
+							For even the biggest enterpise companies.
+						</p>
+						<a href="#register" class="action">Get Started</a>
+						<ul>
+							<li>Send unlimited quotes and invoices</li>
+							<li>Connect up to 15 bank accounts</li>
+							<li>Track up to 200 expenses per month</li>
+							<li>Automated payroll support</li>
+							<li>Export up to 25 reports, including TPS</li>
+						</ul>
+					</article>
+
+				<!-- #pricing --></section>
+			</div>
+
+			<section id="faq">
+
+				<header>
+					<h2>Frequently asked questions</h2>
+					<p>
+						If you can’t find what you’re looking for, email our support team and if you’re lucky someone will get back to you.
+					</p>
+				</header>
+
+				<article>
+					<h3>Does TaxPal handle VAT?</h3>
+					<p>Well no, but if you move your company offshore you can probably ignore it.</p>
+				</article><article>
+					<h3>Can I pay for my subscription via purchase order?</h3>
+					<p>Absolutely, we are happy to take your money in all forms.</p>
+				</article><article>
+					<h3>How do I apply for a job at TaxPal?</h3>
+					<p>We only hire our customers, so subscribe for a minimum of 6 months and then let’s talk.</p>
+				</article><article>
+					<h3>What was that testimonial about tax fraud all about?</h3>
+					<p>TaxPal is just a software application, ultimately your books are your responsibility.</p>
+				</article><article>
+					<h3>TaxPal sounds horrible but why do I still feel compelled to purchase?</h3>
+					<p>This is the power of excellent visual design. You just can’t resist it, no matter how poorly it actually functions.</p>
+				</article><article>
+					<h3>I found other companies called TaxPal, are you sure you can use this name?</h3>
+					<p>Honestly not sure at all. We haven’t actually incorporated or anything, we just thought it sounded cool and made this website.</p>
+				</article><article>
+					<h3>How do you generate reports?</h3>
+					<p>You just tell us what data you need a report for, and we get our kids to create beautiful charts for you using only the finest crayons.</p>
+				</article><article>
+					<h3>Can we expect more inventory features?</h3>
+					<p>In life it’s really better to never expect anything at all.</p>
+				</article><article>
+					<h3>I lost my password, how do I get into my account?</h3>
+					<p>Send us an email and we will send you a copy of our latest password spreadsheet so you can find your information.</p>
+				</article>
+
+			<!-- #faq --></section>
+
+		</main>
+
+		<footer>
+			<h2 class="icon_logo">Tax<span>Pal</span></h2>
+			<ul class="onPageLinks">
+				<li><a href="#features">Features</a></li>
+				<li><a href="#testimonials">Tesimonials</a></li>
+				<li><a href="#pricing">Pricing</a></li>
+			</ul>
+			<p>
+				&copy; 2022 TaxPal. All rights reserved.
+			</p>
+			<ul class="socialLinks">
+				<li>
+					<a href="#" class="icon_twitter">
+						<span>Twitter</span>
+					</a>
+				</li><li>
+					<a href="#" class="icon_github">
+						<span>Github</span>
+					</a>
+				</li>
+			</ul>
+		</footer>
+
+	<!-- #top --></div>
+
+	<form action="#" class="modal" id="signIn" method="post">
+		<a href="#" class="modalClose" hidden><span>Close Signup Form</span></a>
+		<div>
+			<header>
+				<a href="#" class="modalClose icon_logo" hidden>Tax<span>Pal</span></a>
+				<h2>Sign in to your account</h2>
+				<p>
+					Don't have an account? <a href="#register">Sign up for a free trial.</a>
+				</p>
+			</header>
+			<fieldset>
+				<label>
+					E-Mail Address<br>
+					<input name="email" type="email" required><br>
+				</label><label>
+					Password<br>
+					<input name="pass" type="password" required><br>
+				</label>
+			</fieldset>
+			<footer>
+				<button>Sign In</button>
+			</footer>
+		</div>
+	<!-- #signIn.modal --></form>
+
+	<form action="#" class="modal" id="register" method="post">
+		<a href="#" class="modalClose" hidden><span>Close Registration</span></a>
+		<div>
+			<header>
+				<a href="#" class="modalClose icon_logo" hidden>Tax<span>Pal</span></a>
+				<h2>Get Started For Free</h2>
+				<p>
+					Already Registered? <a href="#signIn">Sign in to your account.</a>
+				</p>
+			</header>
+			<fieldset>
+				<label class="short">
+					First Name<br>
+					<input name="firstName" required><br>
+				</label><label class="short">
+					Last Name<br>
+					<input name="lastName" required><br>
+				</label><label>
+					E-Mail Address<br>
+					<input name="email" type="email" required><br>
+				</label><label>
+					Desired Password<br>
+					<input name="password" type="password" required><br>
+				</label><label>
+					How did you hear about us?<br>
+					<select>
+						<option>Altavista? What is this 1997?</option>
+						<option>Super Bowl Commercial</option>
+						<option>Our route 69 bus ad</option>
+						<option>The "Never Use This" Podcast</option>
+					</select><br>
+				</label>
+			</fieldset>
+			<footer>
+				<button>Join Now!</button>
+			</footer>
+		</div>
+	<!-- #register.modal --></form>
+
+</body></html>
