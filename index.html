@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="accounting,bookkeeping,software,payroll,VAT,inventory,reporting,contacts">
+    <meta name="description" content="A rewrite of the 'resaliant' TailwindUI template without the Failwind.">
+    <meta name="keywords" content="tax,pricing,accounting,business,salary,deposit">
+        
+    <link as="font" rel="preload" href="template/fonts/poppins-western.woff2" crossorigin>
+    <link as="font" rel="preload" href="template/fonts/poppins-western-bold.woff2" crossorigin>
+    <link as="font" rel="preload" href="template/fonts/ResalientIcons-Regular.woff2" crossorigin>
+    <link as="style" rel="preload" href="template/resalient.fontIcons.screen.css">
+    
+    <link rel="stylesheet" href="template/resalient.fontIcons.screen.css" media="screen">
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+    <!-- Calculator Widget Script -->
+    <script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
+    <style>
+        .banner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem;
+        }
+        
+        .content-side {
+            flex: 1;
+        }
+        
+        .calculator-container {
+            flex: 1;
+            min-width: 300px;
+        }
+    </style>
+
+    <title>SmartFilings</title>
+</head>
+<body>
+    <div id="top">
+        <header>
+			<div class="header-container">
+				<h1>
+					<a href="/">
+						<img src="logo.png" alt="SmartFilings Logo">
+					</a>
+				</h1>
+				
+				<nav class="main-nav">
+					<ul>
+						<li><a href="#features">Features</a></li>
+						<li><a href="#testimonials">Testimonials</a></li>
+						<li><a href="#pricing">Pricing</a></li>
+					</ul>
+				</nav>
+		
+				<div class="auth-buttons">
+					<a href="#signin" class="sign-in">Sign in</a>
+					<a href="https://tally.so/r/nPAxEb" target="_blank" rel="noopener noreferrer" class="get-started">
+						Join Waitlist
+					</a>
+				</div>
+			</div>
+		</header>
+		
+		<style>
+			header {
+				padding: 1.5rem 2rem;
+				background: #f8fafc;
+				border-bottom: 1px solid #e5e7eb;
+			}
+			
+			.header-container {
+				max-width: 1280px;
+				margin: 0 auto;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			
+			header h1 {
+				margin: 0;
+				flex-shrink: 0;
+			}
+			
+			header h1 img {
+				height: 70px; /* Reduced from 32px */
+				width: auto;
+				display: block;
+			}
+			
+			.main-nav {
+				margin-left: 4rem; /* Increased from 3rem */
+			}
+			
+			.main-nav ul {
+				display: flex;
+				gap: 3rem; /* Increased from 2.5rem */
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			
+			.main-nav a {
+				text-decoration: none;
+				color: #6b7280;
+				font-size: 0.875rem;
+				font-weight: 500;
+				padding: 0.5rem 0;
+				transition: color 0.2s ease;
+			}
+			
+			.main-nav a:hover {
+				color: #111827;
+			}
+			
+			.auth-buttons {
+				display: flex;
+				gap: 3rem; /* Increased from 2rem */
+				align-items: center;
+				margin-left: auto;
+			}
+			
+			.auth-buttons .sign-in {
+				color: #6b7280;
+				padding: 1.25rem 1.25rem;
+				text-decoration: none;
+				font-size: 0.875rem;
+				font-weight: 500;
+				transition: color 0.2s ease;
+			}
+			
+			.auth-buttons .get-started {
+				background: #4066FF;
+				color: white !important;
+				padding: 0.625rem 1.25rem; /* Slightly increased padding */
+				border-radius: 9999px;
+				text-decoration: none;
+				font-size: 0.875rem;
+				font-weight: 500;
+				transition: background-color 0.2s ease;
+			}
+			
+			/* Rest of the mobile styles remain the same */
+			@media (max-width: 768px) {
+				.header-container {
+					flex-direction: column;
+					gap: 1.5rem;
+					padding: 1rem 0;
+				}
+				
+				.main-nav {
+					margin-left: 0;
+					width: 100%;
+				}
+				
+				.main-nav ul {
+					flex-direction: column;
+					text-align: center;
+					gap: 1rem;
+				}
+				
+				.auth-buttons {
+					flex-direction: column;
+					width: 100%;
+					gap: 1rem;
+					margin-left: 1;
+				}
+				
+				.auth-buttons a {
+					width: 100%;
+					text-align: center;
+				}
+			}
+			</style>
+
+        <main>
+            <section class="banner">
+                <!-- Left Column -->
+                <div class="content-side">
+                    <h2>
+                        Transform <span style="color: #2563eb">20 hours</span> of work into <span style="color: #2563eb">1 Minute</span>.
+                    </h2>
+                    <p>
+                        Experience a new era of analysis as our AI makes reviewing corporate disclosures instantaneous for finance professionals everywhere.
+                    </p>
+                    <ul class="actions">
+						<li class="featured">
+							<a href="https://tally.so/r/w8dXkP" target="_blank" rel="noopener noreferrer">
+								Request Beta Access
+							</a>
+						</li>
+						<li>
+							<a href="https://tally.so/r/nPAxEb" target="_blank" rel="noopener noreferrer">
+								Join Waitlist
+							</a>
+						</li>
+					</ul>
+                </div>
+        
+                <!-- Right Column - Calculator -->
+                <div class="calculator-container">
+                    <!-- Embed Elfsight Calculator -->
+                    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+                    <div class="elfsight-app-dd5c8d74-6a52-4820-b965-619e11277d02" data-elfsight-app-lazy></div>
+                </div>
+            </section>
+
+			<section class="video-section">
+				<div class="video-container">
+					<div class="content">
+						<p>Gain an edge with AI that surfaces hidden insights instantly, helping you stay ahead in a fast-moving financial landscape.</p>
+					</div>
+					<div class="video-wrapper">
+						<video autoplay loop muted playsinline class="demo-video" style="background-color: white;">
+							<source src="video_sf.mp4" type="video/mp4">
+						</video>
+						
+					</div>
+				</div>
+			</section>
+			
+			<style>
+			.video-section {
+				padding: 4rem 0;
+				background: #E4E3E3;
+				margin-top: 4rem;
+			}
+			
+			.video-container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 2rem;
+				display: flex;
+				align-items: center;
+				gap: 4rem;
+			}
+			
+			.content {
+				flex: 1;
+			}
+			
+			.content h2 {
+				font-size: 2.5rem;
+				margin-bottom: 1rem;
+			}
+			
+			.content p {
+				font-size: 1.25rem;
+				color: #64748b;
+			}
+			
+			.video-wrapper {
+				flex: 1.5;
+			}
+			
+			.demo-video {
+				width: 100%;
+				border-radius: 8px;
+				box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+			}
+			
+			@media (max-width: 768px) {
+				.video-container {
+					flex-direction: column;
+					gap: 2rem;
+				}
+			}
+			</style>
+        </main>
+
+        <footer>
+            <a href="/" style="display: block; text-align: center;">
+				<img src="logo.png" alt="SmartFilings Logo" class="footer-logo">
+			</a>
+            <ul class="onPageLinks">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#testimonials">Tesimonials</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+            </ul>
+			<style>
+				.footer-logo {
+					height: 90px; /* Tripled from original 30px */
+					width: auto;
+					display: inline-block;
+					margin: 0 auto;
+				}
+				</style>
+            <p>
+                &copy; 2024 SmartFilings. All rights reserved.
+            </p>
+            <ul class="socialLinks">
+                <li>
+                    <a href="#" class="icon_twitter">
+                        <span>Twitter</span>
+                    </a>
+                </li><li>
+                    <a href="#" class="icon_github">
+                        <span>Github</span>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+    </div>
+</body>
+</html>
