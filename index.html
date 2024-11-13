@@ -174,35 +174,75 @@
 
 			</section>
 
+			[Previous sections remain the same until pricing]
+
 			<div>
 				<section id="pricing">
 
 					<header>
 						<h2><span>Simple pricing,</span> for everyone.</h2>
+						<p>
+							It doesn't matter what size your business is, find the right plan for your needs.
+						</p>
 					</header>
 
 					<article>
-						<h3><span>Standard Plan</span></h3>
+						<h3><span>$9</span> Standard Plan</h3>
+						<p>
+							Good for anyone who is self-employed and just getting started.
+						</p>
 						<a href="#register" class="action">Get Started</a>
+						<ul>
+							<li>Send 10 quotes and invoices</li>
+							<li>Connect up to 2 bank accounts</li>
+							<li>Track up to 15 expenses per month</li>
+							<li>Manual payroll support</li>
+							<li>Export up to 3 reports</li>
+						</ul>
 					</article>
 
 					<article class="featured">
-						<h3><span>Institutional Plan</span></h3>
+						<h3><span>$15</span> Institutional Plan</h3>
+						<p>
+							Perfect for small / medium sized businesses.
+						</p>
 						<a href="#register" class="action">Get Started</a>
+						<ul>
+							<li>Send 25 quotes and invoices</li>
+							<li>Connect up to 5 bank accounts</li>
+							<li>Track up to 50 expenses per month</li>
+							<li>Automated payroll support</li>
+							<li>Export up to 12 reports</li>
+							<li>Bulk reconcile transactions</li>
+							<li>Track in multiple currencies</li>
+						</ul>
 					</article>
 
 					<article>
-						<h3><span>Enterprise Plan</span></h3>
-						<a href="#register" class="action">Contact Sales</a>
+						<h3><span>$39</span> Enterprise Plan</h3>
+						<p>
+							For even the biggest enterprise companies.
+						</p>
+						<a href="#register" class="action">Get Started</a>
+						<ul>
+							<li>Send unlimited quotes and invoices</li>
+							<li>Connect up to 15 bank accounts</li>
+							<li>Track up to 200 expenses per month</li>
+							<li>Automated payroll support</li>
+							<li>Export up to 25 reports, including TPS</li>
+						</ul>
 					</article>
 
-				</section>
+				<!-- #pricing --></section>
 			</div>
 
 			<section id="faq">
 
 				<header>
 					<h2>Frequently asked questions</h2>
+					<p>
+						Got questions? We've got answers.
+					</p>
 				</header>
 
 				<article>
@@ -215,15 +255,26 @@
 					<h3>What types of professionals can benefit from SmartFilings?</h3>
 					<p>Professionals across various industries, including financial analysts, investment bankers, compliance specialists, and corporate lawyers, can benefit from SmartFilings.</p>
 				</article><article>
+					<h3>How does SmartFilings differ from traditional SEC filings analysis methods?</h3>
+					<p>SmartFilings automates the SEC filings analysis process, saving time and providing deeper insights compared to traditional manual methods.</p>
+				</article><article>
 					<h3>Is SmartFilings suitable for both novice and experienced professionals?</h3>
 					<p>Yes, SmartFilings caters to both novice and experienced professionals, offering intuitive features and advanced analysis tools.</p>
+				</article><article>
+					<h3>How does SmartFilings ensure the accuracy of its analysis?</h3>
+					<p>SmartFilings ensures accuracy through rigorous data validation processes and continuous refinement of its AI algorithms.</p>
+				</article><article>
+					<h3>Is SmartFilings suitable for individuals as well as businesses?</h3>
+					<p>Yes, SmartFilings is suitable for both individual users and businesses of all sizes.</p>
 				</article>
 
-			</section>
+			<!-- #faq --></section>
 
 		</main>
 
 		<footer>
+			<h2 class="icon_logo">Smart<span>Filings</span></h2>
+			
 			<div class="footer-content">
 				<div class="address-section">
 					<h3>UNITED STATES</h3>
@@ -278,15 +329,70 @@
 			</ul>
 		</footer>
 
-	</div>
+	<!-- #top --></div>
 
-	<!-- Sign In and Register forms kept exactly as original -->
 	<form action="#" class="modal" id="signIn" method="post">
-		<!-- Sign In form content kept identical -->
-	</form>
+		<a href="#" class="modalClose" hidden><span>Close Signup Form</span></a>
+		<div>
+			<header>
+				<a href="#" class="modalClose icon_logo" hidden>Smart<span>Filings</span></a>
+				<h2>Sign in to your account</h2>
+				<p>
+					Don't have an account? <a href="#register">Sign up for a free trial.</a>
+				</p>
+			</header>
+			<fieldset>
+				<label>
+					E-Mail Address<br>
+					<input name="email" type="email" required><br>
+				</label><label>
+					Password<br>
+					<input name="pass" type="password" required><br>
+				</label>
+			</fieldset>
+			<footer>
+				<button>Sign In</button>
+			</footer>
+		</div>
+	<!-- #signIn.modal --></form>
 
 	<form action="#" class="modal" id="register" method="post">
-		<!-- Register form content kept identical -->
-	</form>
+		<a href="#" class="modalClose" hidden><span>Close Registration</span></a>
+		<div>
+			<header>
+				<a href="#" class="modalClose icon_logo" hidden>Smart<span>Filings</span></a>
+				<h2>Get Started For Free</h2>
+				<p>
+					Already Registered? <a href="#signIn">Sign in to your account.</a>
+				</p>
+			</header>
+			<fieldset>
+				<label class="short">
+					First Name<br>
+					<input name="firstName" required><br>
+				</label><label class="short">
+					Last Name<br>
+					<input name="lastName" required><br>
+				</label><label>
+					E-Mail Address<br>
+					<input name="email" type="email" required><br>
+				</label><label>
+					Password<br>
+					<input name="password" type="password" required><br>
+				</label><label>
+					How did you hear about us?<br>
+					<select>
+						<option>Search Engine</option>
+						<option>Social Media</option>
+						<option>Professional Reference</option>
+						<option>Industry Event</option>
+					</select><br>
+				</label>
+			</fieldset>
+			<footer>
+				<button>Get Started</button>
+			</footer>
+		</div>
+	<!-- #register.modal --></form>
 
 </body></html>
