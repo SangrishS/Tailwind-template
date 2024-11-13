@@ -304,60 +304,185 @@
 		</main>
 
 		<footer>
-			<h2 class="icon_logo">Smart<span>Filings</span></h2>
-			
-			<div class="footer-content">
-				<div class="address-section">
-					<h3>UNITED STATES</h3>
-					<address>
-						1910 Pacific Ave<br>
-						Suite 2000 PMB 1538<br>
-						Dallas, TX 75201<br>
-						+1 713 516 0802<br>
-						info@satoshiterminal.io
-					</address>
+			<div class="footer-container">
+				<!-- Company Info Section -->
+				<div class="footer-company">
+					<h2 class="icon_logo">Smart<span>Filings</span></h2>
+					<div class="address-section">
+						<h3>UNITED STATES</h3>
+						<address>
+							1910 Pacific Ave<br>
+							Suite 2000 PMB 1538<br>
+							Dallas, TX 75201
+						</address>
+						<div class="contact-info">
+							<a href="tel:+17135160802">+1 713 516 0802</a><br>
+							<a href="mailto:info@satoshiterminal.io">info@satoshiterminal.io</a>
+						</div>
+					</div>
 				</div>
-
-				<div class="resources">
-					<h3>RESOURCES</h3>
-					<ul>
-						<li><a href="#features">Features</a></li>
-						<li><a href="#pitchdeck">Pitchdeck</a></li>
-						<li><a href="#book-call">Book a call</a></li>
-						<li><a href="#blog">Blog</a></li>
-						<li><a href="#newsletters">Newsletters</a></li>
-					</ul>
-				</div>
-
-				<div class="legal">
-					<h3>LEGAL</h3>
-					<ul>
-						<li><a href="#terms">Terms of Service</a></li>
-						<li><a href="#privacy">Privacy Policy</a></li>
-						<li><a href="#cookie">Cookie Policy</a></li>
-						<li><a href="#gdpr">GDPR</a></li>
-					</ul>
-				</div>
-
-				<div class="get-in-touch">
-					<h3>Get in touch</h3>
-					<p>Contact us for demo and pricing information</p>
+		
+				<!-- Links Section -->
+				<div class="footer-links">
+					<div class="footer-column resources">
+						<h3>RESOURCES</h3>
+						<ul>
+							<li><a href="#features">Features</a></li>
+							<li><a href="#pitchdeck">Pitchdeck</a></li>
+							<li><a href="#book-call">Book a call</a></li>
+							<li><a href="#blog">Blog</a></li>
+							<li><a href="#newsletters">Newsletters</a></li>
+						</ul>
+					</div>
+		
+					<div class="footer-column legal">
+						<h3>LEGAL</h3>
+						<ul>
+							<li><a href="#terms">Terms of Service</a></li>
+							<li><a href="#privacy">Privacy Policy</a></li>
+							<li><a href="#cookie">Cookie Policy</a></li>
+							<li><a href="#gdpr">GDPR</a></li>
+						</ul>
+					</div>
+		
+					<div class="footer-column get-in-touch">
+						<h3>Get in touch</h3>
+						<p>Contact us for demo and pricing information</p>
+						<div class="social-links">
+							<a href="#" class="icon_twitter"><span>Twitter</span></a>
+							<a href="#" class="icon_github"><span>Github</span></a>
+						</div>
+					</div>
 				</div>
 			</div>
-
-			<p class="copyright">© 2024 SmartFilings. All rights reserved</p>
-
-			<ul class="socialLinks">
-				<li>
-					<a href="#" class="icon_twitter">
-						<span>Twitter</span>
-					</a>
-				</li><li>
-					<a href="#" class="icon_github">
-						<span>Github</span>
-					</a>
-				</li>
-			</ul>
+		
+			<div class="footer-bottom">
+				<p class="copyright">© 2024 SmartFilings. All rights reserved</p>
+			</div>
+		
+			<style>
+			footer {
+				padding: 4rem 2rem 2rem;
+				background-color: #111827;
+				color: #fff;
+			}
+		
+			.footer-container {
+				max-width: 1200px;
+				margin: 0 auto;
+				display: grid;
+				grid-template-columns: 1fr 2fr;
+				gap: 4rem;
+			}
+		
+			.footer-company {
+				padding-right: 2rem;
+			}
+		
+			.icon_logo {
+				font-size: 1.5rem;
+				margin-bottom: 2rem;
+				display: inline-block;
+			}
+		
+			.address-section {
+				margin-top: 1.5rem;
+			}
+		
+			.address-section h3 {
+				color: #9CA3AF;
+				font-size: 0.875rem;
+				margin-bottom: 1rem;
+			}
+		
+			.contact-info {
+				margin-top: 1rem;
+			}
+		
+			.contact-info a {
+				color: #9CA3AF;
+				text-decoration: none;
+				transition: color 0.2s;
+			}
+		
+			.contact-info a:hover {
+				color: #fff;
+			}
+		
+			.footer-links {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 2rem;
+			}
+		
+			.footer-column h3 {
+				color: #9CA3AF;
+				font-size: 0.875rem;
+				margin-bottom: 1rem;
+			}
+		
+			.footer-column ul {
+				list-style: none;
+				padding: 0;
+			}
+		
+			.footer-column ul li {
+				margin-bottom: 0.75rem;
+			}
+		
+			.footer-column ul li a {
+				color: #fff;
+				text-decoration: none;
+				transition: color 0.2s;
+			}
+		
+			.footer-column ul li a:hover {
+				color: #9CA3AF;
+			}
+		
+			.social-links {
+				margin-top: 1.5rem;
+				display: flex;
+				gap: 1rem;
+			}
+		
+			.social-links a {
+				color: #9CA3AF;
+				text-decoration: none;
+				transition: color 0.2s;
+			}
+		
+			.social-links a:hover {
+				color: #fff;
+			}
+		
+			.footer-bottom {
+				margin-top: 3rem;
+				padding-top: 2rem;
+				border-top: 1px solid #374151;
+				text-align: center;
+			}
+		
+			.copyright {
+				color: #9CA3AF;
+				font-size: 0.875rem;
+			}
+		
+			@media (max-width: 768px) {
+				.footer-container {
+					grid-template-columns: 1fr;
+				}
+		
+				.footer-links {
+					grid-template-columns: 1fr;
+					gap: 2rem;
+				}
+		
+				.footer-company {
+					padding-right: 0;
+				}
+			}
+			</style>
 		</footer>
 
 	<!-- #top --></div>
