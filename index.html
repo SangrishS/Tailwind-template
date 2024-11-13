@@ -305,9 +305,10 @@
 
 		<footer>
 			<div class="footer-container">
-				<!-- Company Info Section -->
+				<!-- Left Side -->
 				<div class="footer-company">
-					<h2 class="icon_logo">Smart<span>Filings</span></h2>
+					<img src="path/to/smartfilings-logo.svg" alt="SmartFilings" class="footer-logo">
+					
 					<div class="address-section">
 						<h3>UNITED STATES</h3>
 						<address>
@@ -316,15 +317,15 @@
 							Dallas, TX 75201
 						</address>
 						<div class="contact-info">
-							<a href="tel:+17135160802">+1 713 516 0802</a><br>
+							<a href="tel:+17135160802">+1 713 516 0802</a>
 							<a href="mailto:info@satoshiterminal.io">info@satoshiterminal.io</a>
 						</div>
 					</div>
 				</div>
 		
-				<!-- Links Section -->
+				<!-- Middle Links -->
 				<div class="footer-links">
-					<div class="footer-column resources">
+					<div class="footer-column">
 						<h3>RESOURCES</h3>
 						<ul>
 							<li><a href="#features">Features</a></li>
@@ -335,7 +336,7 @@
 						</ul>
 					</div>
 		
-					<div class="footer-column legal">
+					<div class="footer-column">
 						<h3>LEGAL</h3>
 						<ul>
 							<li><a href="#terms">Terms of Service</a></li>
@@ -345,85 +346,95 @@
 						</ul>
 					</div>
 		
-					<div class="footer-column get-in-touch">
+					<!-- Right Side -->
+					<div class="footer-column">
 						<h3>Get in touch</h3>
 						<p>Contact us for demo and pricing information</p>
-						<div class="social-links">
-							<a href="#" class="icon_twitter"><span>Twitter</span></a>
-							<a href="#" class="icon_github"><span>Github</span></a>
-						</div>
 					</div>
+				</div>
+		
+				<!-- Social Icons -->
+				<div class="social-links">
+					<a href="#" class="social-icon twitter">Twitter</a>
+					<a href="#" class="social-icon github">Github</a>
 				</div>
 			</div>
 		
 			<div class="footer-bottom">
-				<p class="copyright">© 2024 SmartFilings. All rights reserved</p>
+				<p>© 2024 SmartFilings. All rights reserved</p>
 			</div>
 		
 			<style>
 			footer {
-				padding: 4rem 2rem 2rem;
-				background-color: #111827;
+				background-color: #0F172A;
 				color: #fff;
+				width: 100%;
+				margin: 0;
+				padding: 0;
 			}
 		
 			.footer-container {
 				max-width: 1200px;
 				margin: 0 auto;
+				padding: 4rem 2rem;
 				display: grid;
-				grid-template-columns: 1fr 2fr;
+				grid-template-columns: 300px 1fr auto;
 				gap: 4rem;
+				position: relative;
 			}
 		
-			.footer-company {
-				padding-right: 2rem;
-			}
-		
-			.icon_logo {
-				font-size: 1.5rem;
+			.footer-logo {
+				max-width: 150px;
 				margin-bottom: 2rem;
-				display: inline-block;
 			}
 		
 			.address-section {
-				margin-top: 1.5rem;
+				margin-top: 2rem;
 			}
 		
 			.address-section h3 {
-				color: #9CA3AF;
+				color: #94A3B8;
 				font-size: 0.875rem;
+				font-weight: 500;
 				margin-bottom: 1rem;
 			}
 		
+			address {
+				color: #E2E8F0;
+				font-style: normal;
+				margin-bottom: 1rem;
+				line-height: 1.5;
+			}
+		
 			.contact-info {
-				margin-top: 1rem;
+				display: flex;
+				flex-direction: column;
+				gap: 0.5rem;
 			}
 		
 			.contact-info a {
-				color: #9CA3AF;
+				color: #94A3B8;
 				text-decoration: none;
 				transition: color 0.2s;
-			}
-		
-			.contact-info a:hover {
-				color: #fff;
 			}
 		
 			.footer-links {
 				display: grid;
 				grid-template-columns: repeat(3, 1fr);
-				gap: 2rem;
+				gap: 4rem;
 			}
 		
 			.footer-column h3 {
-				color: #9CA3AF;
+				color: #94A3B8;
 				font-size: 0.875rem;
-				margin-bottom: 1rem;
+				font-weight: 500;
+				margin-bottom: 1.5rem;
 			}
 		
 			.footer-column ul {
 				list-style: none;
 				padding: 0;
+				margin: 0;
 			}
 		
 			.footer-column ul li {
@@ -431,55 +442,54 @@
 			}
 		
 			.footer-column ul li a {
-				color: #fff;
+				color: #E2E8F0;
 				text-decoration: none;
 				transition: color 0.2s;
-			}
-		
-			.footer-column ul li a:hover {
-				color: #9CA3AF;
 			}
 		
 			.social-links {
-				margin-top: 1.5rem;
 				display: flex;
 				gap: 1rem;
+				position: absolute;
+				top: 4rem;
+				right: 2rem;
 			}
 		
-			.social-links a {
-				color: #9CA3AF;
+			.social-icon {
+				color: #94A3B8;
 				text-decoration: none;
 				transition: color 0.2s;
 			}
 		
-			.social-links a:hover {
-				color: #fff;
-			}
-		
 			.footer-bottom {
-				margin-top: 3rem;
-				padding-top: 2rem;
-				border-top: 1px solid #374151;
+				border-top: 1px solid #1E293B;
+				padding: 2rem;
 				text-align: center;
-			}
-		
-			.copyright {
-				color: #9CA3AF;
+				color: #94A3B8;
 				font-size: 0.875rem;
 			}
 		
-			@media (max-width: 768px) {
+			/* Hover States */
+			.contact-info a:hover,
+			.footer-column ul li a:hover,
+			.social-icon:hover {
+				color: #fff;
+			}
+		
+			@media (max-width: 1024px) {
 				.footer-container {
 					grid-template-columns: 1fr;
+					gap: 3rem;
 				}
 		
 				.footer-links {
-					grid-template-columns: 1fr;
-					gap: 2rem;
+					grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 				}
 		
-				.footer-company {
-					padding-right: 0;
+				.social-links {
+					position: static;
+					justify-content: flex-start;
+					margin-top: 2rem;
 				}
 			}
 			</style>
